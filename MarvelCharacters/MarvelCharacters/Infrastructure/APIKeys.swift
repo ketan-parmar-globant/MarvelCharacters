@@ -11,7 +11,6 @@ import CryptoKit
 
 struct ApiKeys {
     static let obfuscatedPublicKey: [UInt8] = RenderKeyFromConfiguration.get(key: "ApiPublicKey")
-    
     static let obfuscatedPrivateKey: [UInt8] = RenderKeyFromConfiguration.get(key: "ApiPrivateKey")
 }
 

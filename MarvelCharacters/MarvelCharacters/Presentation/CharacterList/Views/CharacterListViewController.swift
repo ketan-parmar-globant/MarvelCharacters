@@ -48,10 +48,6 @@ extension CharacterListViewController: CharacterListViewModelViewDelegate {
         }
     }
     
-    func showAlertViewFor(title: String, subtitle: String?) {
-        
-    }
-    
     func reloadData() {
         characterListTableView?.reloadData()
     }

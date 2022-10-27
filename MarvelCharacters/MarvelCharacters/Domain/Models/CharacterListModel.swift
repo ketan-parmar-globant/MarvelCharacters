@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CharacterListModel {
+struct CharacterListModel: Equatable {
     let results: [ResultModel]?
 }
 
-struct ResultModel {
+struct ResultModel: Equatable {
     let id: Int?
     let name, characterDescription: String?
     let thumbnail: ThumbnailModel?
 }
 
-struct ThumbnailModel {
+struct ThumbnailModel: Equatable {
     let path: String?
 }

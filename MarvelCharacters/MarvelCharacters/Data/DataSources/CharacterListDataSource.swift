@@ -14,7 +14,7 @@ protocol CharacterListDataSourceProtocol {
 class CharacterListDataSource: CharacterListDataSourceProtocol {
     let client: APIClient
     
-    init(client: APIClient = APIClient()) {
+    init(client: APIClient = APIClientImpl()) {
         self.client = client
     }
     

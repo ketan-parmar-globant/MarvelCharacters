@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
     }()
     
     let apiClient: APIClient = {
-        let client = APIClient()
+        let client = APIClientImpl()
         return client
     }()
     

@@ -12,7 +12,8 @@ class CharacterListViewModel {
     weak var viewDelegate: CharacterListViewModelViewDelegate?
     
     private let useCase: CharacterListUseCase
-    var characterList: [ResultModel]? = []
+    private(set) var characterList: [ResultModel]? = nil
+    var completion: ((Bool) -> Void)? = nil
     
     init(useCase: CharacterListUseCase) {
         self.useCase = useCase
@@ -20,29 +21,34 @@ class CharacterListViewModel {
 }
 
 extension CharacterListViewModel: CharacterListViewModelType {
-    
     func start() {
         getCharacterList()
     }
     
     @MainActor
-    func getCharacterList() {
+    func getCharacterList()  {
         Task {
             viewDelegate?.setIndicatorTo(show: true)
             do {
                 let characters = try await useCase.run(parameters: ())
                 self.characterList = characters?.results
+                completion?(true)
+                viewDelegate?.reloadData()
             } catch let error {
                 print("catch: \(error.localizedDescription)")
+                completion?(false)
+                viewDelegate?.showAlertViewFor(title: "Error occured!", subtitle: error.localizedDescription)
             }
             viewDelegate?.setIndicatorTo(show: false)
-            viewDelegate?.reloadData()
         }
     }
     
-    func loadCharacterDetailsScreen(index: Int) {
+    @discardableResult
+    func loadCharacterDetailsScreen(index: Int) -> Bool {
         if let character = characterList?[index], let characterId = character.id, let characterName = character.name {
             coordinatorDelegate?.loadCharacterDetailsScreen(characterId: characterId, characterName: characterName)
+            return true
         }
+        return false
     }
 }

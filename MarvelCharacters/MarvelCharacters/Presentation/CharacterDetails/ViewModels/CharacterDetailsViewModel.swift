@@ -18,6 +18,7 @@ class CharacterDetailsViewModel {
     private(set) var characterImageUrl: String?
     private(set) var characterDescription: String = ""
     private(set) var urls: [URLModel]? = []
+    var completion: ((Bool) -> Void)? = nil
     
     init(useCase: CharacterDetailsUseCase, characterId: Int, characterName: String) {
         self.useCase = useCase
@@ -38,11 +39,14 @@ extension CharacterDetailsViewModel: CharacterDetailsViewModelType {
             do {
                 let characterDetails = try await useCase.run(parameters: CharacterDetailsRequestModel(characterId: String(characterId)))
                 setData(characterDetails: characterDetails)
+                completion?(true)
+                viewDelegate?.reloadData()
             } catch let error {
                 print("catch: \(error.localizedDescription)")
+                completion?(false)
+                viewDelegate?.showAlertViewFor(title: "Error occured!", subtitle: error.localizedDescription)
             }
             viewDelegate?.setIndicatorTo(show: false)
-            viewDelegate?.reloadData()
         }
     }
     

@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol APIClientProtocol {
+protocol APIClient {
     func execute(request: URLRequest) async throws -> (Data, URLResponse)
     func execute<Response: Decodable>(request: URLRequest, responseType: Response.Type) async throws -> (Response?, ErrorResult?)
     func exexute(request: URLRequest, completion: @escaping (Data?, Error?) -> Void)
 }
 
-class APIClient: APIClientProtocol {
+class APIClientImpl: APIClient {
     private let urlSession: URLSession
     private let jsonDecoder: JSONDecoder
     

@@ -11,7 +11,7 @@ struct CommonErrorResponse: Codable {
     let code, message: String?
 }
 
-enum ErrorResult: Error {
+enum ErrorResult: Error, Equatable {
     case network(string: String)
     case parser(string: String)
     case requestBuilder(string: String)

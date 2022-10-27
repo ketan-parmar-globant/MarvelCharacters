@@ -16,4 +16,10 @@ extension UIViewController {
             self.present(safariViewController, animated: true, completion: nil)
         }
     }
+    
+    func showAlertViewFor(title: String, subtitle: String?) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

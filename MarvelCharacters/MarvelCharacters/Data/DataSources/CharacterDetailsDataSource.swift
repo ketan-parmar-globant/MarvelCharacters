@@ -14,7 +14,7 @@ protocol CharacterDetailsDataSourceProtocol {
 class CharacterDetailsDataSource: CharacterDetailsDataSourceProtocol {
     let client: APIClient
     
-    init(client: APIClient = APIClient()) {
+    init(client: APIClient = APIClientImpl()) {
         self.client = client
     }
     

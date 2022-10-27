@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CharacterDetailsRequestModel {
+struct CharacterDetailsRequestModel: Equatable {
     let characterId: String
 }

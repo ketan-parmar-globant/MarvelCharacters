@@ -59,10 +59,6 @@ extension CharacterDetailsViewController: CharacterDetailsViewModelViewDelegate 
         }
     }
     
-    func showAlertViewFor(title: String, subtitle: String?) {
-        
-    }
-    
     func reloadData() {
         characterImageView?.loadImageUsingUrlString(urlString: viewModel?.characterImageUrl)
         characterDescriptionLabel?.text = viewModel?.characterDescription

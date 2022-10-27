@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct CharacterDetailsModel {
+struct CharacterDetailsModel: Equatable {
     let id: Int?
     let name, characterDescription: String?
     let thumbnail: ThumbnailModel?
     let urls: [URLModel]?
 }
 
-struct URLModel {
+struct URLModel: Equatable {
     let type: String?
     let url: String?
 }

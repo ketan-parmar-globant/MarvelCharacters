@@ -20,7 +20,6 @@ struct CryptographyManager {
         return String(Date().timeIntervalSince1970)
     }
     
-    
     static var privateKey: String {
         return String(bytes: ApiKeys.obfuscatedPrivateKey.deobfuscated,
                       encoding: .utf8)!
