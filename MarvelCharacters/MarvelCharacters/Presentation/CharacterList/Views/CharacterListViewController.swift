@@ -8,7 +8,7 @@
 import UIKit
 import TinyConstraints
 
-class CharacterListViewController: UIViewController {
+final class CharacterListViewController: UIViewController {
     private let loader = UIActivityIndicatorView(style: .large)
     private var characterListTableView: UITableView?
     

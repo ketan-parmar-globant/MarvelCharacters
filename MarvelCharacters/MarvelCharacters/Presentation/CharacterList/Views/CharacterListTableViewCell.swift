@@ -9,7 +9,7 @@ import TinyConstraints
 import UIKit
 import SDWebImage
 
-class CharacterListTableViewCell: UITableViewCell, ReusableView {
+final class CharacterListTableViewCell: UITableViewCell, ReusableView {
     private var containerView: UIView?
     private var characterImageView: UIImageView?
     private var characterNameLabel: UILabel?

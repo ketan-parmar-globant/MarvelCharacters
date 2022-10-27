@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterDetailsCollectionViewCell: UICollectionViewCell, ReusableView {
+final class CharacterDetailsCollectionViewCell: UICollectionViewCell, ReusableView {
     private var containerView: UIView?
     private var urlTypeLabel: UILabel?
     

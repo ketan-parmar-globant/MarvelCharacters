@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterDetailsViewModel {
+final class CharacterDetailsViewModel {
     weak var coordinatorDelegate: CharacterDetailsViewModelCoordinatorDelegate?
     weak var viewDelegate: CharacterDetailsViewModelViewDelegate?
     

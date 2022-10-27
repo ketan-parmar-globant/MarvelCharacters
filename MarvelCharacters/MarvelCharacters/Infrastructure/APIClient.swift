@@ -13,7 +13,7 @@ protocol APIClient {
     func exexute(request: URLRequest, completion: @escaping (Data?, Error?) -> Void)
 }
 
-class APIClientImpl: APIClient {
+final class APIClientImpl: APIClient {
     private let urlSession: URLSession
     private let jsonDecoder: JSONDecoder
     

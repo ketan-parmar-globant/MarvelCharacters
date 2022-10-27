@@ -11,7 +11,7 @@ protocol CharacterListDataSourceProtocol {
     func getCharacterList(request: URLRequest) async throws -> CharacterListModel?
 }
 
-class CharacterListDataSource: CharacterListDataSourceProtocol {
+final class CharacterListDataSource: CharacterListDataSourceProtocol {
     let client: APIClient
     
     init(client: APIClient = APIClientImpl()) {

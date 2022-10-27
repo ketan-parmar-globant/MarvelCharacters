@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharacterListCoordinator: Coordinator {
+final class CharacterListCoordinator: Coordinator {
     let rootViewController: UINavigationController
     private let apiClient: APIClient
     

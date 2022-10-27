@@ -7,7 +7,7 @@
 
 import SDWebImage
 
-extension UIImageView{
+extension UIImageView {
     func loadImageUsingUrlString(urlString : String?) {
         guard let urlString = urlString else {
             return

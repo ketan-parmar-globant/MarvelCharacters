@@ -22,7 +22,7 @@ extension RequestBuilderProtocol {
     }
 }
 
-class RequestBuilder: RequestBuilderProtocol {
+final class RequestBuilder: RequestBuilderProtocol {
     let baseURL: URL
     
     init(baseURL: URL) {

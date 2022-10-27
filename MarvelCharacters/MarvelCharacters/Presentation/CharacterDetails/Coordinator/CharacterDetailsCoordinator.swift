@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharacterDetailsCoordinator: Coordinator {
+final class CharacterDetailsCoordinator: Coordinator {
     private let rootViewController: UINavigationController
     private let apiClient: APIClient
     private let characterId: Int

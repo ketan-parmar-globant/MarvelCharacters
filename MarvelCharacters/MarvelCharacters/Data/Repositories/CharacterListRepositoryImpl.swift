@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterListRepositoryImpl: CharacterListRepository {
+final class CharacterListRepositoryImpl: CharacterListRepository {
     let dataSource: CharacterListDataSourceProtocol
     
     init(dataSource: CharacterListDataSourceProtocol = CharacterListDataSource()) {
