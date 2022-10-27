@@ -13,6 +13,7 @@
 
 ## UI
 - Designed UI programmatically using UIKit for the app. Used TinyConstraints to manage `autolayout` programmatically.
+- The app supports both the dark and light mode.
 
 ## API/Web services
 - Used URLSession to call APIs. Used `async await` to manage concurrency.
